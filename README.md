@@ -6,9 +6,9 @@ pip install opcua
 
 
 ## Install Node-Red
-http://nodered.org/docs/getting-started/installation.html
-
 npm install -g --unsafe-perm node-red
+
+http://nodered.org/docs/getting-started/installation.html
 
 ## Install modulo de OPCUA module 
 npm install -g node-red-contrib-opcua
