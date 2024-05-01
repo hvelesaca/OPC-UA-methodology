@@ -3,8 +3,6 @@ The following libraries are necessary for starting up the Python OPC-UA server a
 
 ![SCALES](system_schematic_scales.png)
 
-![SCALES](clients_v2.png)
-
 ## 1. Install Node.js
 [http://nodered.org/docs/getting-started/installation.html](https://nodejs.org/en/download)
 
@@ -26,4 +24,5 @@ $ python Server.py
 ## 7. Node-Red deployment in command console
 $ node-red
 
+![SCALES](clients_v2.png)
 
