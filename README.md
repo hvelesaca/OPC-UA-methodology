@@ -1,7 +1,7 @@
 # OPC-UA-methodology
-Las siguientes librerias son necesarias para la puesta en marcha del servidor Python OPC-UA y el cliente Node-Red OPC-UA. Esta simulacion muestra la ejecucion de 4 balanzas de flujo continuo.
+The following libraries are necessary for starting up the Python OPC-UA server and the Node-Red OPC-UA client. This simulation shows the execution of 4 continuous flow scales.
 
-
+![SCALES](images/iou_equation.webp)
 
 ## 1. Install opcua python 
 pip install opcua
