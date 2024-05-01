@@ -1,7 +1,7 @@
 # OPC-UA-methodology
 The following libraries are necessary for starting up the Python OPC-UA server and the Node-Red OPC-UA client. This simulation shows the execution of 4 continuous flow scales.
 
-![SCALES](images/iou_equation.webp)
+![SCALES](clients_v2.png)
 
 ## 1. Install opcua python 
 pip install opcua
