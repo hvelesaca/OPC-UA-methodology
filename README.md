@@ -3,6 +3,8 @@ The following libraries are necessary for starting up the Python OPC-UA server a
 
 ![SCALES](clients_v2.png)
 
+![SCALES]()
+
 ## 1. Install opcua python 
 pip install opcua
 
