@@ -5,25 +5,25 @@ The following libraries are necessary for starting up the Python OPC-UA server a
 
 ![SCALES](clients_v2.png)
 
-## 1. Install opcua python 
-pip install opcua
-
-## 2. Install Node.js
+## 1. Install Node.js
 [http://nodered.org/docs/getting-started/installation.html](https://nodejs.org/en/download)
 
-## 3. Install Node-Red
-npm install -g --unsafe-perm node-red
+## 2. Install opcua python in command console
+$ pip install opcua
 
-## 4. Install modulo de OPCUA module 
-npm install -g node-red-contrib-opcua
+## 3. Install Node-Red in command console
+$ npm install -g --unsafe-perm node-red
 
-## 5. Install dashboard module
-npm i node-red-dashboard
+## 4. Install modulo de OPCUA module in command console
+$ npm install -g node-red-contrib-opcua
 
-## 6. Server python deployment
-python Server.py
+## 5. Install dashboard module in command console
+$ npm i node-red-dashboard
 
-## 7. Node-Red deployment
-node-red
+## 6. Server python deployment in command console
+$ python Server.py
+
+## 7. Node-Red deployment in command console
+$ node-red
 
 
