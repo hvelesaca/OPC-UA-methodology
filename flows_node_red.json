@@ -1,0 +1,2781 @@
+[
+    {
+        "id": "1c245fa5.01b89",
+        "type": "tab",
+        "label": "Flow Scale 01",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2d767b7a.e07014",
+        "type": "tab",
+        "label": "Flow Scale 02",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8bc274c.3b65488",
+        "type": "tab",
+        "label": "Flow Scale 03",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "93f88edf.4fa0b",
+        "type": "tab",
+        "label": "Flow Scale 04",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "dca22f5714e31b39",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://localhost:4840/UA/Server/Scale",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "1a9380ff.f4446f",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.155:40840/UA/Server/ClimateRoom",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "1522c366.ba371d",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.0.155:40841/UA/Server/Scale",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "5a19007a.ceb94",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://172.20.44.55:40840/UA/Server/ClimateRoom",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "644bcb58.aafc84",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://time.ugr.es:4840/UA/Server/Scale",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "c8d5ef15.2376c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Helvetica Neue",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "Helvetica Neue"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3a8ec7e.91b3538",
+        "type": "ui_tab",
+        "name": "Climate Room",
+        "icon": "dashboard"
+    },
+    {
+        "id": "73f10415.88ed3c",
+        "type": "ui_tab",
+        "name": "Scale",
+        "icon": "dashboard"
+    },
+    {
+        "id": "5a4e4932.67f1a8",
+        "type": "ui_group",
+        "name": "Data 1",
+        "tab": "3a8ec7e.91b3538",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "fd79417b.f59b3",
+        "type": "ui_group",
+        "name": "Program",
+        "tab": "3a8ec7e.91b3538",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "dd5bfcf8.de194",
+        "type": "ui_group",
+        "name": "Scale 01",
+        "tab": "73f10415.88ed3c",
+        "order": 2,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "e40c0797.57ede8",
+        "type": "ui_group",
+        "name": "Program Scale 01",
+        "tab": "73f10415.88ed3c",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "6e00c4b8.fc268c",
+        "type": "ui_group",
+        "name": "Scale 04",
+        "tab": "73f10415.88ed3c",
+        "order": 5,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "fbdfc373.4f267",
+        "type": "ui_group",
+        "name": "Scale 02",
+        "tab": "73f10415.88ed3c",
+        "order": 3,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "a6ca34e3.2e1888",
+        "type": "ui_group",
+        "name": "Scale 03",
+        "tab": "73f10415.88ed3c",
+        "order": 4,
+        "disp": true,
+        "width": "5"
+    },
+    {
+        "id": "83f09fb640ebadbe",
+        "type": "ui_group",
+        "name": "Program Scale 02",
+        "tab": "73f10415.88ed3c",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ed0fa5a469086b3c",
+        "type": "ui_group",
+        "name": "Program Scale 03",
+        "tab": "73f10415.88ed3c",
+        "order": 7,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ef32ab2f83063380",
+        "type": "ui_group",
+        "name": "Program Scale 04",
+        "tab": "73f10415.88ed3c",
+        "order": 8,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3fbcf5e4.63758a",
+        "type": "inject",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2087",
+        "payload": "",
+        "payloadType": "str",
+        "x": 570,
+        "y": 40,
+        "wires": [
+            [
+                "2cb6f8e8.fb9e18"
+            ]
+        ]
+    },
+    {
+        "id": "2cb6f8e8.fb9e18",
+        "type": "delay",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 729,
+        "y": 43,
+        "wires": [
+            [
+                "cf8a39be.048408"
+            ]
+        ]
+    },
+    {
+        "id": "cf8a39be.048408",
+        "type": "OpcUa-Client",
+        "z": "1c245fa5.01b89",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 1",
+        "x": 586,
+        "y": 88,
+        "wires": [
+            [
+                "9e601bf2.7a6638"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ad49f380.c9b7",
+        "type": "OpcUa-Client",
+        "z": "1c245fa5.01b89",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 2",
+        "x": 128,
+        "y": 85,
+        "wires": [
+            [
+                "439135d8.bf7a1c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "95199efe.a8beb",
+        "type": "inject",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "ns=2;i=2090",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "topic": "ns=2;i=2090",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "a6218478.4c6c98"
+            ]
+        ]
+    },
+    {
+        "id": "a6218478.4c6c98",
+        "type": "delay",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 274,
+        "y": 39,
+        "wires": [
+            [
+                "ad49f380.c9b7"
+            ]
+        ]
+    },
+    {
+        "id": "65a9255a.c952cc",
+        "type": "OpcUa-Client",
+        "z": "1c245fa5.01b89",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 3",
+        "x": 123,
+        "y": 225,
+        "wires": [
+            [
+                "b28da832.595918"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "84cbb0bb.d85bf",
+        "type": "inject",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "ns=2;i=2109",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "topic": "ns=2;i=2109",
+        "payload": "",
+        "payloadType": "str",
+        "x": 103,
+        "y": 175,
+        "wires": [
+            [
+                "469c63d1.d492ac"
+            ]
+        ]
+    },
+    {
+        "id": "469c63d1.d492ac",
+        "type": "delay",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 257,
+        "y": 176,
+        "wires": [
+            [
+                "65a9255a.c952cc"
+            ]
+        ]
+    },
+    {
+        "id": "b2aad05b.84337",
+        "type": "OpcUa-Client",
+        "z": "1c245fa5.01b89",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 4",
+        "x": 125,
+        "y": 368,
+        "wires": [
+            [
+                "79f4bcde.b73a94"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c21e1b1a.839c88",
+        "type": "inject",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "topic": "ns=2;i=2075",
+        "payload": "",
+        "payloadType": "str",
+        "x": 105,
+        "y": 318,
+        "wires": [
+            [
+                "c8b19f90.6c147"
+            ]
+        ]
+    },
+    {
+        "id": "c8b19f90.6c147",
+        "type": "delay",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 259,
+        "y": 319,
+        "wires": [
+            [
+                "b2aad05b.84337"
+            ]
+        ]
+    },
+    {
+        "id": "a7bbdd0.68f692",
+        "type": "OpcUa-Client",
+        "z": "1c245fa5.01b89",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 5",
+        "x": 128,
+        "y": 506,
+        "wires": [
+            [
+                "ac7fc4aa.49b5d8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c807c313.71be2",
+        "type": "inject",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "topic": "ns=2;i=2076",
+        "payload": "",
+        "payloadType": "str",
+        "x": 108,
+        "y": 456,
+        "wires": [
+            [
+                "485dd51d.47d3ec"
+            ]
+        ]
+    },
+    {
+        "id": "485dd51d.47d3ec",
+        "type": "delay",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 262,
+        "y": 457,
+        "wires": [
+            [
+                "a7bbdd0.68f692"
+            ]
+        ]
+    },
+    {
+        "id": "ee1f9e4d.d8ff",
+        "type": "OpcUa-Item",
+        "z": "1c245fa5.01b89",
+        "item": "ns=2;i=2088",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 870,
+        "y": 180,
+        "wires": [
+            [
+                "b29be2b.62f7c2"
+            ]
+        ]
+    },
+    {
+        "id": "b29be2b.62f7c2",
+        "type": "OpcUa-Client",
+        "z": "1c245fa5.01b89",
+        "endpoint": "dca22f5714e31b39",
+        "action": "write",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Write 1 ",
+        "x": 871,
+        "y": 252,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e2e18caa.08f1d",
+        "type": "ui_button",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "group": "e40c0797.57ede8",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Start",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "ee1f9e4d.d8ff"
+            ]
+        ]
+    },
+    {
+        "id": "c8f6239d.461b6",
+        "type": "ui_button",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "group": "e40c0797.57ede8",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Resume",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Resume",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 541,
+        "y": 271,
+        "wires": [
+            [
+                "ee1f9e4d.d8ff"
+            ]
+        ]
+    },
+    {
+        "id": "cd121aca.4e9228",
+        "type": "ui_button",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "group": "e40c0797.57ede8",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Suspend",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Suspend",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 540,
+        "y": 225,
+        "wires": [
+            [
+                "ee1f9e4d.d8ff"
+            ]
+        ]
+    },
+    {
+        "id": "439135d8.bf7a1c",
+        "type": "ui_text",
+        "z": "1c245fa5.01b89",
+        "group": "e40c0797.57ede8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current State",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 373,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b28da832.595918",
+        "type": "ui_text",
+        "z": "1c245fa5.01b89",
+        "group": "e40c0797.57ede8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sub Current State ",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 327,
+        "y": 226,
+        "wires": []
+    },
+    {
+        "id": "79f4bcde.b73a94",
+        "type": "ui_text",
+        "z": "1c245fa5.01b89",
+        "group": "e40c0797.57ede8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Acumulated",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 329,
+        "y": 369,
+        "wires": []
+    },
+    {
+        "id": "ac7fc4aa.49b5d8",
+        "type": "ui_text",
+        "z": "1c245fa5.01b89",
+        "group": "e40c0797.57ede8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Batch",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 312,
+        "y": 507,
+        "wires": []
+    },
+    {
+        "id": "9e601bf2.7a6638",
+        "type": "ui_gauge",
+        "z": "1c245fa5.01b89",
+        "name": "",
+        "group": "e40c0797.57ede8",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "gtype": "wave",
+        "title": "Weight",
+        "label": "Kg",
+        "format": "{{'%.2f'|sprintf:value}}",
+        "min": "0",
+        "max": "220",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 845,
+        "y": 102,
+        "wires": []
+    },
+    {
+        "id": "1e2238d7.2dcfa7",
+        "type": "inject",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2102",
+        "payload": "",
+        "payloadType": "str",
+        "x": 570,
+        "y": 40,
+        "wires": [
+            [
+                "60fe323b.995a6c"
+            ]
+        ]
+    },
+    {
+        "id": "60fe323b.995a6c",
+        "type": "delay",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 729,
+        "y": 43,
+        "wires": [
+            [
+                "c7b8b2fb.a4a78"
+            ]
+        ]
+    },
+    {
+        "id": "c7b8b2fb.a4a78",
+        "type": "OpcUa-Client",
+        "z": "2d767b7a.e07014",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 1",
+        "x": 586,
+        "y": 88,
+        "wires": [
+            [
+                "168b546.6bb23ac"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "168b546.6bb23ac",
+        "type": "ui_gauge",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "group": "83f09fb640ebadbe",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Weight",
+        "label": "Kg",
+        "format": "{{'%.2f'|sprintf:value}}",
+        "min": "0",
+        "max": "220",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 764,
+        "y": 88,
+        "wires": []
+    },
+    {
+        "id": "1b149541c7659937",
+        "type": "OpcUa-Item",
+        "z": "2d767b7a.e07014",
+        "item": "ns=2;i=2103",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 860,
+        "y": 160,
+        "wires": [
+            [
+                "9a7184e18fa78396"
+            ]
+        ]
+    },
+    {
+        "id": "9a7184e18fa78396",
+        "type": "OpcUa-Client",
+        "z": "2d767b7a.e07014",
+        "endpoint": "dca22f5714e31b39",
+        "action": "write",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Write 2",
+        "x": 861,
+        "y": 232,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "86cdd4e991133ffd",
+        "type": "ui_button",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "group": "83f09fb640ebadbe",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Start",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "1b149541c7659937"
+            ]
+        ]
+    },
+    {
+        "id": "161a88782c51ba25",
+        "type": "ui_button",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "group": "83f09fb640ebadbe",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Resume",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Resume",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 531,
+        "y": 251,
+        "wires": [
+            [
+                "1b149541c7659937"
+            ]
+        ]
+    },
+    {
+        "id": "adcdfb5c775b6deb",
+        "type": "ui_button",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "group": "83f09fb640ebadbe",
+        "order": 7,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Suspend",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Suspend",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 530,
+        "y": 205,
+        "wires": [
+            [
+                "1b149541c7659937"
+            ]
+        ]
+    },
+    {
+        "id": "df776be5f473ed93",
+        "type": "OpcUa-Client",
+        "z": "2d767b7a.e07014",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 2",
+        "x": 128,
+        "y": 85,
+        "wires": [
+            [
+                "dd398504033cae30"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "488f708a7e8dd1c9",
+        "type": "inject",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2155",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "80887bbb624c4d05"
+            ]
+        ]
+    },
+    {
+        "id": "80887bbb624c4d05",
+        "type": "delay",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 274,
+        "y": 39,
+        "wires": [
+            [
+                "df776be5f473ed93"
+            ]
+        ]
+    },
+    {
+        "id": "a1c38c6afe8d279e",
+        "type": "OpcUa-Client",
+        "z": "2d767b7a.e07014",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 3",
+        "x": 130,
+        "y": 210,
+        "wires": [
+            [
+                "8d1a15e500cc1bf0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "13263ca3dc1cd726",
+        "type": "inject",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2183",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "7c0e039ad3ce50ab"
+            ]
+        ]
+    },
+    {
+        "id": "7c0e039ad3ce50ab",
+        "type": "delay",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 264,
+        "y": 161,
+        "wires": [
+            [
+                "a1c38c6afe8d279e"
+            ]
+        ]
+    },
+    {
+        "id": "875dacc4fd07dd63",
+        "type": "OpcUa-Client",
+        "z": "2d767b7a.e07014",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 4",
+        "x": 130,
+        "y": 330,
+        "wires": [
+            [
+                "3afd7286d5314b14"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a6286a599c72a3e6",
+        "type": "inject",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2013",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "cbd1af5ea20f54b6"
+            ]
+        ]
+    },
+    {
+        "id": "cbd1af5ea20f54b6",
+        "type": "delay",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 264,
+        "y": 281,
+        "wires": [
+            [
+                "875dacc4fd07dd63"
+            ]
+        ]
+    },
+    {
+        "id": "dd398504033cae30",
+        "type": "ui_text",
+        "z": "2d767b7a.e07014",
+        "group": "83f09fb640ebadbe",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current State",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 373,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8d1a15e500cc1bf0",
+        "type": "ui_text",
+        "z": "2d767b7a.e07014",
+        "group": "83f09fb640ebadbe",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sub Current State ",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 334,
+        "y": 211,
+        "wires": []
+    },
+    {
+        "id": "3afd7286d5314b14",
+        "type": "ui_text",
+        "z": "2d767b7a.e07014",
+        "group": "83f09fb640ebadbe",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Acumulated",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 334,
+        "y": 331,
+        "wires": []
+    },
+    {
+        "id": "c63829ab4b2bbde0",
+        "type": "OpcUa-Client",
+        "z": "2d767b7a.e07014",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 5",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "28c1cb0dc69657c8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cbeeecda8ee444e9",
+        "type": "inject",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2014",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 390,
+        "wires": [
+            [
+                "0b1662cc8455a7c7"
+            ]
+        ]
+    },
+    {
+        "id": "0b1662cc8455a7c7",
+        "type": "delay",
+        "z": "2d767b7a.e07014",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 264,
+        "y": 391,
+        "wires": [
+            [
+                "c63829ab4b2bbde0"
+            ]
+        ]
+    },
+    {
+        "id": "28c1cb0dc69657c8",
+        "type": "ui_text",
+        "z": "2d767b7a.e07014",
+        "group": "83f09fb640ebadbe",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Batch",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 314,
+        "y": 441,
+        "wires": []
+    },
+    {
+        "id": "f5b68956.eecd48",
+        "type": "inject",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2239",
+        "payload": "",
+        "payloadType": "str",
+        "x": 570,
+        "y": 40,
+        "wires": [
+            [
+                "70ecb4e8.96dafc"
+            ]
+        ]
+    },
+    {
+        "id": "70ecb4e8.96dafc",
+        "type": "delay",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 729,
+        "y": 43,
+        "wires": [
+            [
+                "84141df9.a3254"
+            ]
+        ]
+    },
+    {
+        "id": "84141df9.a3254",
+        "type": "OpcUa-Client",
+        "z": "8bc274c.3b65488",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 1",
+        "x": 586,
+        "y": 88,
+        "wires": [
+            [
+                "a1f632e0.a36ba"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a1f632e0.a36ba",
+        "type": "ui_gauge",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "group": "ed0fa5a469086b3c",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Weight",
+        "label": "Kg",
+        "format": "{{'%.2f'|sprintf:value}}",
+        "min": "0",
+        "max": "220",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 764,
+        "y": 88,
+        "wires": []
+    },
+    {
+        "id": "086f7bf51dc9889e",
+        "type": "OpcUa-Client",
+        "z": "8bc274c.3b65488",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 2",
+        "x": 128,
+        "y": 85,
+        "wires": [
+            [
+                "00aa8438ee1206cd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "099d1550ac1370f6",
+        "type": "inject",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2242",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "b7af60b4d8ae7e45"
+            ]
+        ]
+    },
+    {
+        "id": "b7af60b4d8ae7e45",
+        "type": "delay",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 274,
+        "y": 39,
+        "wires": [
+            [
+                "086f7bf51dc9889e"
+            ]
+        ]
+    },
+    {
+        "id": "2354a6a018211120",
+        "type": "OpcUa-Client",
+        "z": "8bc274c.3b65488",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 3",
+        "x": 130,
+        "y": 210,
+        "wires": [
+            [
+                "860a15d08fe95b98"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a2cae015271429b1",
+        "type": "inject",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2254",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "bdda3292cdd00f1f"
+            ]
+        ]
+    },
+    {
+        "id": "bdda3292cdd00f1f",
+        "type": "delay",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 264,
+        "y": 161,
+        "wires": [
+            [
+                "2354a6a018211120"
+            ]
+        ]
+    },
+    {
+        "id": "77cf12109f3b5ed7",
+        "type": "OpcUa-Client",
+        "z": "8bc274c.3b65488",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 4",
+        "x": 130,
+        "y": 330,
+        "wires": [
+            [
+                "d2bd30db2de59f4f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ce39ea7e541ac0f7",
+        "type": "inject",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2228",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "329e8d075204e599"
+            ]
+        ]
+    },
+    {
+        "id": "329e8d075204e599",
+        "type": "delay",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 264,
+        "y": 281,
+        "wires": [
+            [
+                "77cf12109f3b5ed7"
+            ]
+        ]
+    },
+    {
+        "id": "00aa8438ee1206cd",
+        "type": "ui_text",
+        "z": "8bc274c.3b65488",
+        "group": "ed0fa5a469086b3c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current State",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 373,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "860a15d08fe95b98",
+        "type": "ui_text",
+        "z": "8bc274c.3b65488",
+        "group": "ed0fa5a469086b3c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sub Current State ",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 334,
+        "y": 211,
+        "wires": []
+    },
+    {
+        "id": "d2bd30db2de59f4f",
+        "type": "ui_text",
+        "z": "8bc274c.3b65488",
+        "group": "ed0fa5a469086b3c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Acumulated",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 334,
+        "y": 331,
+        "wires": []
+    },
+    {
+        "id": "f1666029bdd7fbf5",
+        "type": "OpcUa-Client",
+        "z": "8bc274c.3b65488",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 5",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "68cc7ac78395808b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "96aaa9ee400ace86",
+        "type": "inject",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2229",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 390,
+        "wires": [
+            [
+                "8a3cdf57672359cb"
+            ]
+        ]
+    },
+    {
+        "id": "8a3cdf57672359cb",
+        "type": "delay",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 264,
+        "y": 391,
+        "wires": [
+            [
+                "f1666029bdd7fbf5"
+            ]
+        ]
+    },
+    {
+        "id": "68cc7ac78395808b",
+        "type": "ui_text",
+        "z": "8bc274c.3b65488",
+        "group": "ed0fa5a469086b3c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Batch",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 314,
+        "y": 441,
+        "wires": []
+    },
+    {
+        "id": "7cb80eabf41a9313",
+        "type": "OpcUa-Item",
+        "z": "8bc274c.3b65488",
+        "item": "ns=2;i=2240",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 870,
+        "y": 180,
+        "wires": [
+            [
+                "5a0f23e5076efe60"
+            ]
+        ]
+    },
+    {
+        "id": "5a0f23e5076efe60",
+        "type": "OpcUa-Client",
+        "z": "8bc274c.3b65488",
+        "endpoint": "dca22f5714e31b39",
+        "action": "write",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Write 3",
+        "x": 871,
+        "y": 252,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6be45afa4b9ab8d6",
+        "type": "ui_button",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "group": "ed0fa5a469086b3c",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Start",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "7cb80eabf41a9313"
+            ]
+        ]
+    },
+    {
+        "id": "5d2694b52967e5f5",
+        "type": "ui_button",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "group": "ed0fa5a469086b3c",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Resume",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Resume",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 541,
+        "y": 271,
+        "wires": [
+            [
+                "7cb80eabf41a9313"
+            ]
+        ]
+    },
+    {
+        "id": "3bcc55f23dbe02ed",
+        "type": "ui_button",
+        "z": "8bc274c.3b65488",
+        "name": "",
+        "group": "ed0fa5a469086b3c",
+        "order": 7,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Suspend",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Suspend",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 540,
+        "y": 225,
+        "wires": [
+            [
+                "7cb80eabf41a9313"
+            ]
+        ]
+    },
+    {
+        "id": "a004c59b.804ed8",
+        "type": "inject",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "topic": "ns=2;i=2310",
+        "payload": "",
+        "payloadType": "str",
+        "x": 558,
+        "y": 197,
+        "wires": [
+            [
+                "23a40f54.240dc"
+            ]
+        ]
+    },
+    {
+        "id": "23a40f54.240dc",
+        "type": "delay",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 717,
+        "y": 200,
+        "wires": [
+            [
+                "66239034.19bdf"
+            ]
+        ]
+    },
+    {
+        "id": "66239034.19bdf",
+        "type": "OpcUa-Client",
+        "z": "93f88edf.4fa0b",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 1",
+        "x": 574,
+        "y": 245,
+        "wires": [
+            [
+                "15eebc22.f07d44"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "15eebc22.f07d44",
+        "type": "ui_gauge",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "group": "ef32ab2f83063380",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Weight",
+        "label": "Kg",
+        "format": "{{'%.2f'|sprintf:value}}",
+        "min": "0",
+        "max": "220",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 752,
+        "y": 245,
+        "wires": []
+    },
+    {
+        "id": "b3b136b61be9a79f",
+        "type": "OpcUa-Client",
+        "z": "93f88edf.4fa0b",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 2",
+        "x": 125,
+        "y": 85,
+        "wires": [
+            [
+                "f63413dc2ff89c61"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "34a4ae960c5d3388",
+        "type": "inject",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2313",
+        "payload": "",
+        "payloadType": "str",
+        "x": 107,
+        "y": 40,
+        "wires": [
+            [
+                "554f6abc03d553bb"
+            ]
+        ]
+    },
+    {
+        "id": "554f6abc03d553bb",
+        "type": "delay",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 271,
+        "y": 39,
+        "wires": [
+            [
+                "b3b136b61be9a79f"
+            ]
+        ]
+    },
+    {
+        "id": "9ee53fc93b855c3b",
+        "type": "OpcUa-Client",
+        "z": "93f88edf.4fa0b",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 3",
+        "x": 127,
+        "y": 210,
+        "wires": [
+            [
+                "a10afe0c953d1f70"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f8fb3e88458333dd",
+        "type": "inject",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2325",
+        "payload": "",
+        "payloadType": "str",
+        "x": 107,
+        "y": 160,
+        "wires": [
+            [
+                "23bd646a5d03af66"
+            ]
+        ]
+    },
+    {
+        "id": "23bd646a5d03af66",
+        "type": "delay",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 261,
+        "y": 161,
+        "wires": [
+            [
+                "9ee53fc93b855c3b"
+            ]
+        ]
+    },
+    {
+        "id": "043f7f09e988a778",
+        "type": "OpcUa-Client",
+        "z": "93f88edf.4fa0b",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 4",
+        "x": 127,
+        "y": 330,
+        "wires": [
+            [
+                "044bd9f48b8911ed"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0270f000930fe9ec",
+        "type": "inject",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2299",
+        "payload": "",
+        "payloadType": "str",
+        "x": 107,
+        "y": 280,
+        "wires": [
+            [
+                "5048cc38e65d63d5"
+            ]
+        ]
+    },
+    {
+        "id": "5048cc38e65d63d5",
+        "type": "delay",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 261,
+        "y": 281,
+        "wires": [
+            [
+                "043f7f09e988a778"
+            ]
+        ]
+    },
+    {
+        "id": "f63413dc2ff89c61",
+        "type": "ui_text",
+        "z": "93f88edf.4fa0b",
+        "group": "ef32ab2f83063380",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current State",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 370,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a10afe0c953d1f70",
+        "type": "ui_text",
+        "z": "93f88edf.4fa0b",
+        "group": "ef32ab2f83063380",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sub Current State ",
+        "format": "{{msg.payload.text}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 331,
+        "y": 211,
+        "wires": []
+    },
+    {
+        "id": "044bd9f48b8911ed",
+        "type": "ui_text",
+        "z": "93f88edf.4fa0b",
+        "group": "ef32ab2f83063380",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Acumulated",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 331,
+        "y": 331,
+        "wires": []
+    },
+    {
+        "id": "686437d92ecd6d33",
+        "type": "OpcUa-Client",
+        "z": "93f88edf.4fa0b",
+        "endpoint": "dca22f5714e31b39",
+        "action": "subscribe",
+        "deadbandvalue": "",
+        "time": "1",
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Subscribe 5",
+        "x": 127,
+        "y": 440,
+        "wires": [
+            [
+                "da2ac07c0477a24a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c6e402652b476e7c",
+        "type": "inject",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "ns=2;i=2300",
+        "payload": "",
+        "payloadType": "str",
+        "x": 107,
+        "y": 390,
+        "wires": [
+            [
+                "1fa08609e3ea8c73"
+            ]
+        ]
+    },
+    {
+        "id": "1fa08609e3ea8c73",
+        "type": "delay",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 261,
+        "y": 391,
+        "wires": [
+            [
+                "686437d92ecd6d33"
+            ]
+        ]
+    },
+    {
+        "id": "da2ac07c0477a24a",
+        "type": "ui_text",
+        "z": "93f88edf.4fa0b",
+        "group": "ef32ab2f83063380",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weight Batch",
+        "format": "{{msg.payload}} Kg",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 311,
+        "y": 441,
+        "wires": []
+    },
+    {
+        "id": "fd0097038efd65e9",
+        "type": "OpcUa-Item",
+        "z": "93f88edf.4fa0b",
+        "item": "ns=2;i=2311",
+        "datatype": "String",
+        "value": "",
+        "name": "",
+        "x": 847,
+        "y": 40,
+        "wires": [
+            [
+                "ba34463d60a529fa"
+            ]
+        ]
+    },
+    {
+        "id": "ba34463d60a529fa",
+        "type": "OpcUa-Client",
+        "z": "93f88edf.4fa0b",
+        "endpoint": "dca22f5714e31b39",
+        "action": "write",
+        "deadbandvalue": "",
+        "time": 10,
+        "timeUnit": "s",
+        "localfile": "",
+        "localkeyfile": "",
+        "useTransport": false,
+        "maxChunkCount": "",
+        "maxMessageSize": "",
+        "receiveBufferSize": "",
+        "sendBufferSize": "",
+        "name": "Client Write 4",
+        "x": 848,
+        "y": 112,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b014f5da838c90e2",
+        "type": "ui_button",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "group": "ef32ab2f83063380",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Start",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 507,
+        "y": 40,
+        "wires": [
+            [
+                "fd0097038efd65e9"
+            ]
+        ]
+    },
+    {
+        "id": "8f17cf8db8c0ad55",
+        "type": "ui_button",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "group": "ef32ab2f83063380",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Resume",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Resume",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 518,
+        "y": 131,
+        "wires": [
+            [
+                "fd0097038efd65e9"
+            ]
+        ]
+    },
+    {
+        "id": "5969586218628335",
+        "type": "ui_button",
+        "z": "93f88edf.4fa0b",
+        "name": "",
+        "group": "ef32ab2f83063380",
+        "order": 7,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Suspend",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Suspend",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 517,
+        "y": 85,
+        "wires": [
+            [
+                "fd0097038efd65e9"
+            ]
+        ]
+    }
+]
